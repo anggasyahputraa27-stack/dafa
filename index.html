@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMKN 13 MEDAN</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <div class="login-container" id="loginPage">
+    <div class="login-box">
+      <h1>🏫 SMKN 13</h1>
+      <p>Sistem Informasi Sekolah SMKN 13</p>
+
+      <form id="loginForm">
+        <select id="role">
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <input type="text" id="username" placeholder="Masukkan Username" required>
+        <input type="password" id="password" placeholder="Masukkan Password" required>
+
+        <button type="submit">Login</button>
+      </form>
+
+      <p id="message"></p>
+
+      <div class="login-info">
+        <h3>Password Demo</h3>
+        <p><b>Admin:</b> admin123</p>
+        <p><b>User:</b> user123</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="dashboard hidden" id="dashboard">
+
+    <aside class="sidebar">
+      <h2>🏫 SMKN 13 MEDAN</h2>
+
+      <ul>
+        <li onclick="showSection('home')">🏠 Dashboard</li>
+        <li onclick="showSection('pelajaran')">📚 Pelajaran</li>
+        <li onclick="showSection('guru')">👨‍🏫 Guru</li>
+        <li onclick="showSection('siswa')">🎓 Siswa</li>
+        <li onclick="showSection('jadwal')">📅 Jadwal</li>
+        <li onclick="showSection('pengumuman')">📢 Pengumuman</li>
+        <li onclick="showSection('nilai')">📝 Nilai</li>
+        <li onclick="showSection('absensi')">✅ Absensi</li>
+        <li onclick="toggleDarkMode()">🌙 Dark Mode</li>
+        <li onclick="logout()">🚪 Logout</li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+
+      <!-- HOME -->
+      <section id="home" class="section active">
+        <h1>Dashboard Sekolah</h1>
+
+        <div class="cards">
+          <div class="card">
+            <h2>📚 4</h2>
+            <p>Mata Pelajaran</p>
+          </div>
+
+          <div class="card">
+            <h2>👨‍🏫 4</h2>
+            <p>Guru</p>
+          </div>
+
+          <div class="card">
+            <h2>🎓 4</h2>
+            <p>Siswa</p>
+          </div>
+
+          <div class="card">
+            <h2>🏆 A+</h2>
+            <p>Akreditasi</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PELAJARAN -->
+      <section id="pelajaran" class="section">
+        <h1>📚 Data Pelajaran</h1>
+
+        <table>
+          <tr>
+            <th>No</th>
+            <th>Pelajaran</th>
+            <th>Guru</th>
+          </tr>
+
+          <tr>
+            <td>1</td>
+            <td>Matematika</td>
+            <td>Oktrin</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Bahasa Indonesia</td>
+            <td>Roma</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>KKTKJ Kabel&Nirkabel</td>
+            <td>Haloho</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>KKTKJ ASJ</td>
+            <td>Mawadah</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- GURU -->
+      <section id="guru" class="section">
+        <h1>👨‍🏫 Data Guru</h1>
+
+        <div class="cards">
+          <div class="teacher-card">
+            <h3>Oktrin</h3>
+            <p>Guru Matematika</p>
+          </div>
+
+          <div class="teacher-card">
+            <h3>Roma</h3>
+            <p>Guru Bahasa Indonesia</p>
+          </div>
+
+          <div class="teacher-card">
+            <h3>Haloho</h3>
+            <p>Guru KKTKJ Kabel&Nirkabel</p>
+          </div>
+
+          <div class="teacher-card">
+            <h3>Mawadah</h3>
+            <p>Guru KKTKJ ASJ</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SISWA -->
+      <section id="siswa" class="section">
+        <h1>🎓 Data Siswa</h1>
+
+        <table>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Kelas</th>
+            <th>Jurusan</th>
+          </tr>
+
+          <tr>
+            <td>1</td>
+            <td>Angga</td>
+            <td>11</td>
+            <td>TKJ</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Kasih Ratu</td>
+            <td>11</td>
+            <td>TKJ</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Dafa</td>
+            <td>11</td>
+            <td>TKJ</td>
+          </tr>
+
+         <tr>
+            <td>4</td>
+            <td>Naufal</td>
+            <td>11</td>
+            <td>TKJ</td>
+        </table>
+      </section>
+
+      <!-- JADWAL -->
+      <section id="jadwal" class="section">
+        <h1>📅 Jadwal Pelajaran</h1>
+
+        <table>
+          <tr>
+            <th>Hari</th>
+            <th>Pelajaran</th>
+            <th>Jam</th>
+          </tr>
+
+          <tr>
+            <td>Senin</td>
+            <td>Matematika</td>
+            <td>08:00 - 10:00</td>
+          </tr>
+
+          <tr>
+            <td>Selasa</td>
+            <td>Bahasa Indonesia</td>
+            <td>10:00 - 12:00</td>
+          </tr>
+
+          <tr>
+            <td>Rabu</td>
+            <td>KKTKJ KABEL DAN NIRKABEL</td>
+            <td>08:00 - 10:00</td>
+        
+          </tr>
+
+          <tr>
+            <td>Kamis</td>
+            <td>KKTKJ ASJ</td>
+            <td>10:00 - 12:00</td>
+
+        </table>
+      </section>
+
+      <!-- PENGUMUMAN -->
+      <section id="pengumuman" class="section">
+        <h1>📢 Pengumuman</h1>
+
+        <div class="announcement">
+          <h3>Libur Nasional</h3>
+          <p>Sekolah libur pada tanggal 17 Agustus.</p>
+        </div>
+
+        <div class="announcement">
+          <h3>Ujian Semester</h3>
+          <p>Ujian dimulai tanggal 3 Juni.</p>
+        </div>
+      </section>
+
+      <!-- NILAI -->
+      <section id="nilai" class="section">
+        <h1>📝 Nilai Siswa</h1>
+
+        <table>
+          <tr>
+            <th>Nama</th>
+            <th>Mapel</th>
+            <th>Nilai</th>
+          </tr>
+
+          <tr>
+            <td>Angga</td>
+            <td>KKTKJ ASJ</td>
+            <td>95</td>
+          </tr>
+
+          <tr>
+            <td>Kasih Ratu</td>
+            <td>Matematika</td>
+            <td>100</td>
+          </tr>
+
+          <tr>
+            <td>Dafa </td>
+            <td>Bahasa Indonesia</td>
+            <td>90</td>
+         </tr>
+        
+         <tr>
+            <td>Naufal</td>
+            <td>KKTKJ KABEL NIRKABEL</td>
+            <td>90</td>
+        </table>
+      </section>
+
+      <!-- ABSENSI -->
+      <section id="absensi" class="section">
+        <h1>✅ Absensi</h1>
+
+        <table>
+          <tr>
+            <th>Nama</th>
+            <th>Status</th>
+          </tr>
+
+          <tr>
+            <td>Angga</td>
+            <td>Hadir</td>
+          </tr>
+
+          <tr>
+            <td>Kasih Ratu</td>
+            <td>Hadir</td>
+          </tr>
+
+          <tr>
+            <td>Dafa</td>
+            <td>Hadir</td>
+          </tr>
+
+          <tr>
+            <td>Naufal</td>
+            <td>Izin</td>
+
+        </table>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
